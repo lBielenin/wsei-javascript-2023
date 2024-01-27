@@ -126,6 +126,9 @@ const operatorBtnLister = e => {
     }
     calculator.lastInput = operatorInput;
 }
+
+
+
 /**
  * Wewnątrz funkcji obsługi zdarzenia `onlodad` umieść
  * powiązanie przycisków kalkulatora dla zdarzenia 'click' z odpowiednimi funkcjami:
@@ -141,6 +144,22 @@ const operatorBtnLister = e => {
  * Nie można zmianiać pliku calculator.html!!!
  */
 window.onload = function () {
+    digitButtons.forEach(element => element.addEventListener('click', digitBtnListener));
+    operatorButtons.forEach(element => element.addEventListener('click', operatorBtnLister));
+    displayClearBtn.addEventListener('click', displayClearBtnListener);
+    addEventListener("keydown", (event) => {
+        const input = event.key;
+        const parsed = parseInt(input);
+
+        if(!isNaN(parsed)) {
+            mainDisplay.addDigit(parsed);
+            return;
+        }
+        if(calculator.operators[input] != null){
+            operatorBtnLister(input);
+            return;
+        }
+    });
 
 }
 
