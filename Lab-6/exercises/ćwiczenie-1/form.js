@@ -15,3 +15,16 @@
  * funkcja obiektu zdarzenia anulująca normalny tryb obsługi zdarzenia to preventDefault(), ale nie blokuje propagacji
  * Informacje na temat walidacji fomrularzy w JS: https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
  */
+
+const startDate = document.getElementById("start-date");
+const endDate = document.getElementById("end-date");
+
+document.forms[0].addEventListener('submit', (e) => {
+    if(!new Date(startDate.value) <= new Date()) {
+        e.preventDefault();
+        
+        
+    }
+
+    if()
+})

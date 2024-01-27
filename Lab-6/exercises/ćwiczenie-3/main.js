@@ -4,14 +4,19 @@ let color = '#FF5511'
 document.body.addEventListener('click', function (e){
   if(e.target.parentElement.id === 'board') {
     e.target.style.backgroundColor = color;
-    console.log(e);
+
+    let arr = Array.from(e.target.parentElement.children);
+    let targ = arr.indexOf(e.target);
+    let row = Math.floor(targ / 3);
+    let grid = targ % 3;
+    e.target.textContent = `${row} - ${grid}`;  
   }
 
 });
 changeColorBtn.addEventListener('click', function(e){
-  console.log('dupa');
   const inputColor = changeColorBtn.parentElement.children[1];
   color = inputColor.value;
+
 });
 
 /**

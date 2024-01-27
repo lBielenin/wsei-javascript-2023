@@ -19,3 +19,6 @@
     3 - musi wystąpić choć jedna odpowiedź niepusta
     4 - muszą wystąpić co najmniej dwie pary 
  */
+
+const form = document.getElementsByTagName('form')[0];
+console.log(form);
