@@ -1,10 +1,17 @@
 const changeColorBtn = document.getElementById('color-btn');
 let color = '#FF5511'
+
 document.body.addEventListener('click', function (e){
+  if(e.target.parentElement.id === 'board') {
+    e.target.style.backgroundColor = color;
+    console.log(e);
+  }
 
 });
 changeColorBtn.addEventListener('click', function(e){
-  //wpisz kod
+  console.log('dupa');
+  const inputColor = changeColorBtn.parentElement.children[1];
+  color = inputColor.value;
 });
 
 /**
